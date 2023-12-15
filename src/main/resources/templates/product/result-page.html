@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Result Page</title>
+</head>
+<body>
+
+<div>
+  <h1>Result Page</h1>
+
+  <!-- 성공 메시지 표시 -->
+  <div th:if="${message}" style="color: green;">
+    <p th:text="${message}"></p>
+  </div>
+
+  <!-- 에러 메시지 표시 -->
+  <div th:if="${error}" style="color: red;">
+    <p th:text="${error}"></p>
+  </div>
+</div>
+
+</body>
+</html>

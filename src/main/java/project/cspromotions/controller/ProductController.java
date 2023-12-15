@@ -26,7 +26,7 @@ public class ProductController {
     @GetMapping("/fetch-from-external")
     public String fetchProductsFromExternal(Model model) {
         try {
-            String url = "https://pyony.com/brands/cu/";
+            String url = "https://www.7-eleven.co.kr/product/presentList.asp";
             Document doc = Jsoup.connect(url).get();
             System.out.println(doc);
             Elements productElements = doc.select(".prodList li");

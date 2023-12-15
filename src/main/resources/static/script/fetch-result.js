@@ -1,7 +1,7 @@
 // Ajax 요청 함수 정의
 function fetchDataFromServer() {
     $.ajax({
-        url: "https://pyony.com/brands/cu/",
+        url: "https://www.7-eleven.co.kr/product/presentList.asp",
         async: false,
         success: function (data) {
             location.reload();
