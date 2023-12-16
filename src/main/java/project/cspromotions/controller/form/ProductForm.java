@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class ProductForm {
     private String name;
     private String description;
-    private double price;
+    private String price;
     private MultipartFile imageFile;  // 이미지를 처리하기 위한 필드
 
 

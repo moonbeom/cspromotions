@@ -19,6 +19,26 @@
   <div th:if="${error}" style="color: red;">
     <p th:text="${error}"></p>
   </div>
+
+  <!-- 테이블 표시 -->
+  <table>
+    <thead>
+    <tr>
+      <th>Event</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Image</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product : ${products}">
+      <td th:text="${product.event}"></td>
+      <td th:text="${product.name}"></td>
+      <td th:text="${product.price}"></td>
+      <td th:text="${product.img}"></td>
+    </tr>
+    </tbody>
+  </table>
 </div>
 
 </body>
