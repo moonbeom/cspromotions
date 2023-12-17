@@ -33,6 +33,7 @@ public class SevenElevenService {
             sevenEleven.setName(product.getName());
             sevenEleven.setPrice(product.getPrice());
             sevenEleven.setImg(product.getImg());
+            sevenEleven.setUrl("https://www.7-eleven.co.kr/product/presentList.asp");  // 실제 세븐일레븐 URL을 여기에 설정
             sevenElevenList.add(sevenEleven);
         }
 
@@ -41,5 +42,8 @@ public class SevenElevenService {
 
     public List<SevenEleven> getAllData() {
         return sevenElevenRepository.findAll();
+    }
+    public List<SevenEleven> findByUrl(String url) {
+        return sevenElevenRepository.findByUrl(url);
     }
 }

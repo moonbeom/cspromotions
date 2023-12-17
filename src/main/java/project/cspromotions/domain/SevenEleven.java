@@ -20,4 +20,5 @@ public class SevenEleven {
     private String name;
     private Double price;
     private String img;
+    private String url;
 }

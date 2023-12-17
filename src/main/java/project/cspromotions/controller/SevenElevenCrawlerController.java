@@ -56,6 +56,10 @@ public class SevenElevenCrawlerController {
             // 성공 메시지 및 데이터 전송
             model.addAttribute("message", "Data fetched and stored successfully.");
             model.addAttribute("products", productList);
+
+            //URL로 데이터 조회
+            List<SevenEleven> dataByUrl = sevenElevenService.findByUrl("https://www.7-eleven.co.kr/product/presentList.asp");
+            System.out.println("조회된 데이터 개수: " + dataByUrl.size());
         } catch (Exception e) {
             e.printStackTrace();
             // 에러 메시지 전송
@@ -113,6 +117,7 @@ public class SevenElevenCrawlerController {
 
         return eventDataList;
     }
+
 
     private void saveDataToDatabase(Connection connection, List<Product> eventDataList) {
         sevenElevenService.saveAll(eventDataList);
