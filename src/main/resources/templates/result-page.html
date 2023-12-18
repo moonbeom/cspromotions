@@ -1,47 +1,35 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Result Page</title>
+  <meta charset="UTF-8"/>
+  <title>결과 페이지</title>
 </head>
 <body>
+<h2>데이터가 성공적으로 가져와 저장되었습니다.</h2>
 
-<div>
-  <h1>Result Page</h1>
-
-  <!-- 성공 메시지 표시 -->
-  <div th:if="${message}" style="color: green;">
-    <p th:text="${message}"></p>
-  </div>
-
-  <!-- 에러 메시지 표시 -->
-  <div th:if="${error}" style="color: red;">
-    <p th:text="${error}"></p>
-  </div>
-
-  <!-- 테이블 표시 -->
-  <table>
-    <thead>
-    <tr>
-      <th>Event</th>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Image</th>
-      <th>URL</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="product : ${products}">
-      <td th:text="${product.event}"></td>
-      <td th:text="${product.name}"></td>
-      <td th:text="${product.price}"></td>
-      <td th:text="${product.img}"></td>
-      <td th:text="${product.url}"></td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-
+<table border="1">
+  <thead>
+  <tr>
+    <th>이벤트</th>
+    <th>이름</th>
+    <th>가격</th>
+    <th>이미지</th>
+    <th>URL</th>
+  </tr>
+  </thead>
+  <tbody>
+  <!-- 제품 목록을 반복하면서 표시 -->
+  <tr th:each="product : ${products}">
+    <td th:text="${product.event}"></td>
+    <td th:text="${product.name}"></td>
+    <td th:text="${product.price}"></td>
+    <td>
+      <!-- 이미지 표시 (img가 URL이라고 가정) -->
+      <img th:src="${product.img}" alt="제품 이미지"/>
+    </td>
+    <td th:text="${product.url}"></td>
+  </tr>
+  </tbody>
+</table>
 </body>
 </html>

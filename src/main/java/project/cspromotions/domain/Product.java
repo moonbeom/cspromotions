@@ -6,7 +6,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
-@Entity(name = "SEVENELEVEN")
+
+@Entity
 @Getter
 @Setter
 public class Product {
@@ -14,10 +15,10 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
-    private String description;
-    private double price; // 또는 BigDecimal로 변경
-    private String imageName; // 이미지 파일 이름
+    private String brand; // 새로 추가한 열
     private String event;
+    private String name;
+    private Double price;
     private String img;
+    private String url;
 }

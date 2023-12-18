@@ -35,12 +35,10 @@ public class ProductController {
 
             for (Element productElement : productElements) {
                 String productName = productElement.select(".prodName").text();
-                String productDescription = productElement.select(".prodDescription").text();
                 double productPrice = Double.parseDouble(productElement.select(".prodPrice").text().replaceAll("[^\\d.]", ""));
 
                 Product product = new Product();
                 product.setName(productName);
-                product.setDescription(productDescription);
                 product.setPrice(productPrice);
 
                 products.add(product);
